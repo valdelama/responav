@@ -76,18 +76,21 @@ h1,h2,h3,p {
 
 /* The :after pseudo element has an icon that covers the checkbox */
 .slide-toggle:after {
-	content: '';
+	content: "!";
+	color: #f9f9f9;
+	background: #333;
 	display: block;
-	background: url("menu_trigger.png") no-repeat scroll center top #333333;
 	height: 30px;
-	width: 35px;
+	width: 38px;
 	border-radius: 3px;
-	margin: -15px 0 0 -15px;
+	margin: -15px 0 0 -18px;
+	font: 24px/30px 'responav';
+	text-align: center;
 }
 
 /* When it's checked replace the menu icon with a close icon */
 .slide-toggle:checked:after {
-	background-position-y: -30px;
+	content: '"';
 }
 
 
@@ -118,8 +121,7 @@ h1,h2,h3,p {
 	 * When the checkbox is checked slide the content
 	 * over and the checkbox with it
 	 */
-	.slide-toggle:checked ~ .slide,
-	.slide-toggle:checked {
+	.slide-toggle:checked ~ .slide {
 		-webkit-transform: translate3d(70%, 0, 0) scale3d(1, 1, 1);
 		-moz-transform: translate3d(70%, 0, 0) scale3d(1, 1, 1);
 		-ms-transform: translate3d(70%, 0, 0) scale3d(1, 1, 1);
@@ -171,4 +173,15 @@ h1,h2,h3,p {
 		border-bottom: none;
 	}
 
+}
+
+@font-face {
+	font-family: 'responav';
+	src:url('fonts/responav.eot');
+	src:url('fonts/responav.eot?#iefix') format('embedded-opentype'),
+		url('fonts/responav.woff') format('woff'),
+		url('fonts/responav.ttf') format('truetype'),
+		url('fonts/responav.svg#responav') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
