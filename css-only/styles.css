@@ -1,0 +1,165 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font: 13px/18px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+.slide {
+	background: #f5f5f5;
+	padding: 20px;
+}
+
+.content ul,
+.content ol {
+	margin: 10px 40px;
+}
+
+h1,h2,h3,p {
+	margin-bottom: 18px;
+}
+/* @group .nav */
+.nav {
+	width: 100%;
+	overflow: hidden;
+}
+
+.nav ul {
+	margin: 0 0 20px 0;
+	padding: 5px 0;
+	background: #333;
+	overflow: hidden;
+	border-radius: 3px;
+}
+.nav li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+
+.nav li a {
+	display: block;
+	padding: 5px 20px;
+	text-decoration: none;
+	background: #333;
+	color: #f9f9f9;
+}
+
+.nav li a:hover {
+	background: #2e2e2e;
+}
+
+/* @end nav */
+
+/* This is the checkbox */
+.slide-toggle {
+	width: 100%;
+	margin: 20px 0 20px 25px;
+	float: left;
+	cursor: pointer;
+	position: relative;
+	z-index: 1;
+	display: none;
+}
+
+/* The :after pseudo element has an icon that covers the checkbox */
+.slide-toggle:after {
+	content: '';
+	display: block;
+	background: url("menu_trigger.png") no-repeat scroll center top #333333;
+	height: 30px;
+	width: 35px;
+	border-radius: 3px;
+	margin: -5px 0 0 -5px;
+}
+
+/* When it's checked replace the menu icon with a close icon */
+.slide-toggle:checked:after {
+	background-position-y: -30px;
+}
+
+
+/*
+ * I set the width pretty high because I wanted to test on an Ipad in portrait mode,
+ * depending on your website you can probably make this narrower
+ */
+@media handheld, only screen and (max-width: 980px) {
+
+	/* Only show the menu link on smaller screens */
+	.slide-toggle	{
+		display: block;
+	}
+
+	/*
+	 * The transition value determines the speed at which
+	 * the content and menu button will slide over
+	 */
+	.slide,
+	.slide-toggle {
+		-webkit-transition: -webkit-transform 500ms ease;
+		-moz-transition: -moz-transform 500ms ease;
+		-o-transition: -o-transform 500ms ease;
+		transition: transform 500ms ease;
+	}
+
+	/*
+	 * When the checkbox is checked slide the content
+	 * over and the checkbox with it
+	 */
+	.slide-toggle:checked ~ .slide,
+	.slide-toggle:checked {
+		-webkit-transform: translate3d(70%, 0, 0) scale3d(1, 1, 1);
+		-moz-transform: translate3d(70%, 0, 0) scale3d(1, 1, 1);
+		-ms-transform: translate3d(70%, 0, 0) scale3d(1, 1, 1);
+		-o-transform: translate3d(70%, 0, 0) scale3d(1, 1, 1);
+		transform: translate3d(70%, 0, 0) scale3d(1, 1, 1);
+	}
+
+	.nav {
+		height: 100%;
+		background: #333;
+
+		/*
+		 * The width determines how much of the page you want to
+		 * remain visible once the menu slides over
+		 */
+		width: 70%;
+
+		/*
+		 * Must be absolutely positioned otherwise it won't sit
+		 * side by side with the content but instead above it
+		 * */
+		position: absolute;
+		left: 0;
+		top: 0;
+
+		/* Keeps the menu hidden off-canvas to the left */
+		-webkit-transform: translate3d(-100%, 0, 0);
+		-moz-transform: translate3d(-100%, 0, 0);
+		-ms-transform: translate3d(-100%, 0, 0);
+		-o-transform: translate3d(-100%, 0, 0);
+		transform: translate3d(-100%, 0, 0);
+	}
+
+	.nav li {
+		float: none;
+	}
+
+	.nav li a {
+		border-top: 1px solid #222;
+		border-bottom: 1px solid #444;
+		padding: 12px 12px;
+	}
+
+	.nav li:first-child a {
+		border-top: none;
+	}
+
+	.nav li:last-child a {
+		border-bottom: none;
+	}
+
+}
