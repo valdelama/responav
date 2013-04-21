@@ -1,4 +1,4 @@
-RESPONAV
+RespoNav
 ========
 
 Responsive off-canvas navigation solutions, CSS only to start and a Jquery plugin coming soon... watch this space.
