@@ -3,18 +3,31 @@
 	padding: 0;
 }
 
+body, 
+html {
+		height: 100%;
+}
+
 body {
 	font: 13px/18px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+
+	/*
+	 * Relates to the pseudo class & sibling bug, see
+	 * http://css-tricks.com/webkit-sibling-bug/ for more details
+	 */
 	-webkit-animation: bugfix infinite 1s;
 }
+
+/* Also relates to the pseudo class & sibling bug */
 @-webkit-keyframes bugfix { from { padding: 0; } to { padding: 0; } }
 
 .outer {
 	overflow: hidden;
+	height: 100%;
 }
 
 .slide {
-	background: #f5f5f5;
+	background: #f9f9f9;
 	padding: 20px;
 }
 
@@ -30,19 +43,17 @@ body {
 h1,h2,h3,p {
 	margin-bottom: 18px;
 }
+
 /* @group .nav */
 .nav {
 	width: 100%;
-	overflow: hidden;
-}
-
-.nav ul {
 	margin: 0 0 20px 0;
 	padding: 5px 0;
 	background: #333;
-	overflow: hidden;
 	border-radius: 3px;
+	overflow: hidden;
 }
+
 .nav li {
 	list-style: none;
 	margin: 0;
@@ -65,17 +76,34 @@ h1,h2,h3,p {
 /* @end nav */
 
 /* This is the checkbox */
-.slide-toggle {
+input[type="checkbox"].slide-toggle {
 	float: right;
 	cursor: pointer;
 	position: relative;
 	z-index: 1;
 	display: none;
-	margin: 25px 20px 0 0;
+
+	/*
+	 * Need to use input[type="checkbox"] rather than
+	 * just .slide-toggle in order for the -webkit stuff
+	 * to work don't ask me why!
+	 */
+	-webkit-appearance: none;
+}
+
+/* Kill the nasty outlines everywhere */
+input[type="checkbox"].slide-toggle,
+input[type="checkbox"].slide-toggle:active,
+input[type="checkbox"].slide-toggle:checked,
+input[type="checkbox"].slide-toggle:focus {
+	border: none !important;
+	outline: none !important;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 /* The :after pseudo element has an icon that covers the checkbox */
 .slide-toggle:after {
+	margin: 10px 15px 0 0;
 	content: "!";
 	color: #f9f9f9;
 	background: #333;
@@ -83,7 +111,6 @@ h1,h2,h3,p {
 	height: 30px;
 	width: 38px;
 	border-radius: 3px;
-	margin: -15px 0 0 -18px;
 	font: 24px/30px 'responav';
 	text-align: center;
 }
@@ -93,7 +120,6 @@ h1,h2,h3,p {
 	content: '"';
 }
 
-
 /*
  * I set the width pretty high because I wanted to test on an Ipad in portrait mode,
  * depending on your website you can probably make this narrower
@@ -101,16 +127,16 @@ h1,h2,h3,p {
 @media handheld, only screen and (max-width: 980px) {
 
 	/* Only show the menu link on smaller screens */
-	.slide-toggle	{
+	input[type="checkbox"].slide-toggle {
 		display: block;
 	}
 
 	/*
-	 * The transition value determines the speed at which
-	 * the content and menu button will slide over
+	 * The transition value determines the speed
+	 * at which the content will slide over
 	 */
-	.slide,
-	.slide-toggle {
+	.slide {
+		height: 100%;
 		-webkit-transition: -webkit-transform 500ms ease;
 		-moz-transition: -moz-transform 500ms ease;
 		-o-transition: -o-transform 500ms ease;
