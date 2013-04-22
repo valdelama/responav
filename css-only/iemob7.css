@@ -1,0 +1,9 @@
+@media handheld, only screen and (max-width: 980px) {
+	.slide-toggle:checked ~ .slide {
+		margin-left: 70%;
+	}
+
+	.nav {
+		margin-left: -100%;
+	}
+}
