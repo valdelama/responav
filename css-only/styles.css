@@ -89,6 +89,7 @@ input[type="checkbox"].slide-toggle {
 	 * to work don't ask me why!
 	 */
 	-webkit-appearance: none;
+	margin: 10px 10px 0 0;
 }
 
 /* Kill the nasty outlines everywhere */
@@ -103,7 +104,6 @@ input[type="checkbox"].slide-toggle:focus {
 
 /* The :after pseudo element has an icon that covers the checkbox */
 .slide-toggle:after {
-	margin: 10px 15px 0 0;
 	content: "!";
 	color: #f9f9f9;
 	background: #333;
@@ -113,6 +113,7 @@ input[type="checkbox"].slide-toggle:focus {
 	border-radius: 3px;
 	font: 24px/30px 'responav';
 	text-align: center;
+	margin-left: -19px;
 }
 
 /* When it's checked replace the menu icon with a close icon */
@@ -158,6 +159,7 @@ input[type="checkbox"].slide-toggle:focus {
 	.nav {
 		height: 100%;
 		background: #333;
+		border-radius: 0;
 
 		/*
 		 * The width determines how much of the page you want to
