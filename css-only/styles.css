@@ -23,7 +23,6 @@ body {
 
 .outer {
 	overflow: hidden;
-	height: 100%;
 }
 
 .slide {
@@ -42,6 +41,10 @@ body {
 
 h1,h2,h3,p {
 	margin-bottom: 18px;
+}
+
+h1 {
+	line-height: 26px;
 }
 
 /* @group .nav */
@@ -137,7 +140,6 @@ input[type="checkbox"].slide-toggle:focus {
 	 * at which the content will slide over
 	 */
 	.slide {
-		height: 100%;
 		-webkit-transition: -webkit-transform 500ms ease;
 		-moz-transition: -moz-transform 500ms ease;
 		-o-transition: -o-transform 500ms ease;
