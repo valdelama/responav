@@ -143,8 +143,21 @@ h1 {
 		-moz-transition: -moz-transform 500ms ease;
 		-o-transition: -o-transform 500ms ease;
 		transition: transform 500ms ease;
+	}
 
-
+	/*
+	 * Enable hardware acceleration and stop flickering
+	 * More details: http://indiegamr.com/ios6-html-hardware-acceleration-changes-and-how-to-fix-them/
+	 * Add more browser prefixes as required for your environment
+	 */
+	.slide,
+	.nav {
+		-webkit-transform: translateZ(0);
+		-moz-transform: translateZ(0);
+		-webkit-perspective: 1000;
+		-moz-perspective: 1000;
+		-webkit-backface-visibility: hidden;
+		-moz-backface-visibility: hidden;
 	}
 
 	/*
@@ -157,10 +170,11 @@ h1 {
 		-ms-transform: translateX(70%) scale(1);
 		-o-transform: translateX(70%) scale(1);
 		transform: translateX(70%) scale(1);
+
 	}
 
 	.nav {
-		/*height: 100%;*/
+		height: 100%;
 		background: #333;
 		border-radius: 0;
 
@@ -184,8 +198,6 @@ h1 {
 		-ms-transform: translateX(-100%);
 		-o-transform: translateX(-100%);
 		transform: translateX(-100%);
-
-		-webkit-backface-visibility: hidden;
 	}
 
 	.nav li {
