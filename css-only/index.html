@@ -5,15 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CSS only responsive menu</title>
         <link href="styles.css" rel="stylesheet">
-		<!--[if IEMobile 7]>
-		<link rel="stylesheet" type="text/css" href="iemob7.css" media="screen" />
-		<![endif]-->
 		<link rel="shortcut icon" href="http://valdelama.com/favicon.png" type="image/x-icon">
     </head>
 
     <body>
 		<div class="outer">
-			<input type="checkbox" class="slide-toggle" role="button">
+			<label for="slide-checkbox" class="slide-toggle" onclick></label>
+			<input type="checkbox" id="slide-checkbox" class="slide-checkbox" role="button">
 			<div class="slide">
 				<ul class="nav">
 					<li><a href="http://valdelama.com">Home</a></li>
