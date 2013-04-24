@@ -3,7 +3,7 @@
 	padding: 0;
 }
 
-body, 
+body,
 html {
 		height: 100%;
 }
@@ -78,13 +78,6 @@ h1 {
 
 /* @end nav */
 
-/* This is the checkbox */
-input[type="checkbox"].slide-checkbox {
-	position: absolute;
-	top: -9999px;
-	left: -9999px;
-}
-
 /* This is the clickable label */
 .slide-toggle {
 	float: right;
@@ -118,6 +111,13 @@ input[type="checkbox"].slide-checkbox {
 	margin-left: -19px;
 }
 
+/* This is the checkbox */
+.slide-checkbox {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
+
 /* When it's checked replace the menu icon with a close icon */
 .slide-checkbox:checked ~ .slide-toggle:after {
 	content: '"';
@@ -143,6 +143,8 @@ input[type="checkbox"].slide-checkbox {
 		-moz-transition: -moz-transform 500ms ease;
 		-o-transition: -o-transform 500ms ease;
 		transition: transform 500ms ease;
+
+
 	}
 
 	/*
@@ -182,6 +184,8 @@ input[type="checkbox"].slide-checkbox {
 		-ms-transform: translateX(-100%);
 		-o-transform: translateX(-100%);
 		transform: translateX(-100%);
+
+		-webkit-backface-visibility: hidden;
 	}
 
 	.nav li {
