@@ -1,0 +1,79 @@
+.responav-trigger {
+  border: none;
+  cursor: pointer;
+}
+.responav-trigger:after {
+  content: "!";
+  height: 30px;
+  width: 38px;
+  border-radius: 3px;
+  font: 24px/30px "responav";
+  text-align: center;
+  display: block;
+}
+
+.responav-open .responav-trigger:after {
+  content: '"';
+}
+
+@font-face {
+  font-family: 'responav';
+  src: url("../fonts/responav.eot");
+  src: url("../fonts/responav.eot?#iefix") format("embedded-opentype"), url("../fonts/responav.woff") format("woff"), url("../fonts/responav.ttf") format("truetype"), url("../fonts/responav.svg#responav") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.responav-outer {
+  overflow: hidden;
+}
+
+.responav-menu,
+.responav-active .responav-inner {
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  -o-perspective: 1000;
+  perspective: 1000;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.responav-active .responav-inner {
+  -webkit-transition: -webkit-transform 500ms ease;
+  -moz-transition: -moz-transform 500ms ease;
+  -o-transition: -o-transform 500ms ease;
+  transition: transform 500ms ease;
+  height: 100%;
+}
+
+.responav-active.responav-open .responav-inner {
+  -webkit-transform: translateX(70%);
+  -moz-transform: translateX(70%);
+  -ms-transform: translateX(70%);
+  -o-transform: translateX(70%);
+  transform: translateX(70%);
+}
+
+.responav-menu {
+  height: 100%;
+  overflow: hidden;
+  border-radius: 0;
+  width: 70%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
