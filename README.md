@@ -1,7 +1,14 @@
 RespoNav
 ========
 
-Responsive off-canvas navigation solutions, CSS only to start and a Jquery plugin coming soon... watch this space.
+A tiny plugin for off-canvas responsive navigation.
+
+
+**This code has not been tested so it is not ready for production use yet!**  Feel free to comment, contribute and criticise however...and in case you're interested there is a CSS only experimental version over here:
+
+https://github.com/valdelama/responav/tree/css-only
+
+
 
 Copyright and license
 ---------------------
