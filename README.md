@@ -1,7 +1,7 @@
 RespoNav
 ========
 
-Responsive off-canvas navigation solutions, CSS only to start and a Jquery plugin coming soon... watch this space.
+This is a CSS only experiment in off-canvas responsive navigation. Check the master branch for the plugin.
 
 Copyright and license
 ---------------------
