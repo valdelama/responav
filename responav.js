@@ -43,4 +43,4 @@
 
 		return this;
 	};
-})(jQuery);
+})($);
